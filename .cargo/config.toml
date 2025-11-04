@@ -1,0 +1,14 @@
+[build]
+target = "./m68k-atari-mint.json"
+
+[unstable]
+build-std = ["core"]
+
+[target."./m68k-atari-mint.json"]
+linker = "m68k-atari-mint-gcc"
+rustflags = [
+	"-C", "link-arg=-lc",
+	"-C", "panic=abort",
+  "-C", "force-unwind-tables=no",
+	"-C", "link-self-contained=no"
+]
