@@ -3,7 +3,4 @@ name = "m68k-atari-mint-rs"
 version = "0.1.0"
 edition = "2024"
 
-# [profile.release]
-# panic = "abort"
-
 [dependencies]
