@@ -18,13 +18,19 @@
   "linker-flavor": "gcc",
   "pre-link-args": {
     "gcc": [
+      "-nostdlib",
       "-m68000",
       "-no-pie"
     ]
   },
   "late-link-args": {
     "gcc": [
-      "-lc",
+      "-Wl,--gc-sections",
+      "/home/takashi/current/mintbox/build/objs/crt0.o",
+      "-Wl,--start-group",
+      "-L/home/takashi/current/mintbox/build",
+      "-lcbox",
+      "-Wl,--end-group",
       "-lgcc"
     ]
   },

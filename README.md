@@ -58,3 +58,11 @@ That means you can use vec and the like with no problems.
 
 With LTO = true in the Cargo.toml, this doesn't increase the binary size
 at all.
+
+## Using another libc
+
+The normal libc on the platform, mintlib, makes all binaries 104K by
+default when stripped. If you link a different c stdlib, you can get
+much smaller binary sizes. I linked my own cstdlib (mintbox), and the
+resulting binary that uses core + alloc (allocating a vector + printing)
+is 4KB, the same as if I were to write it in C.
