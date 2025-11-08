@@ -49,3 +49,12 @@ If you want to build only for a given CPU, say m68020, pass it into the
 ...
 ```
 
+## Alloc Support
+
+This example comes with support for using alloc by linking to the libc
+alloc on the target.
+
+That means you can use vec and the like with no problems.
+
+With LTO = true in the Cargo.toml, this doesn't increase the binary size
+at all.
